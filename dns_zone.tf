@@ -1,4 +1,6 @@
 resource "azurerm_dns_zone" "dns" {
+  count                             = "${length(keys(var.dns_zone))}"
+  
   name                              = "${var.subdomain}${var.dns_zone["name"]}"
   resource_group_name               = "${var.resource_group_name}"
   zone_type                         = "${var.dns_zone["zone_type"]}"

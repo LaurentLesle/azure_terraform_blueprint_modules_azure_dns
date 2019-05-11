@@ -3,7 +3,9 @@ variable "resource_group_name" {
 }
 
 variable "dns_zone" {
+    description = "(Optional) Map of the DNS zone to create"
     type = "map"
+    default = {}
 }
 
 variable "subdomain" {
